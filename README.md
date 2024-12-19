@@ -7,12 +7,13 @@ A Python package for graph algorithms, including a Floyd-Warshall implementation
 Install the package using pip:
 
 ```bash
-pip install graphs
+pip install graph_algorithms
+
 
 
 ## Useage
 ```python
-from graphs import floyd_warshall_bidirectional
+from graph_algorithms import floyd_warshall_bidirectional
 
 # Example usage
 graph = [[0, 3, float('inf')], [float('inf'), 0, 1], [float('inf'), float('inf'), 0]]

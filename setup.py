@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="my_graphs_package",  # Your package name
-    version="0.1.0",  # Initial version
+    name="graph_algorithms",  # Your package name
+    version="0.1.1",  # Initial version
     description="A package for graph algorithms, including Floyd-Warshall.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
