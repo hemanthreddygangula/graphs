@@ -4,7 +4,7 @@ setup(
     name="my_graphs_package",  # Your package name
     version="0.1.0",  # Initial version
     description="A package for graph algorithms, including Floyd-Warshall.",
-    long_description=open("graphs/README.md").read(),
+    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Hemanth Reddy Gangula",
     author_email="hemanthreddy8181@gmail.com",
