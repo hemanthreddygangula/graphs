@@ -2,10 +2,10 @@
 floyd_warshall.py
 
 This module provides an implementation of the Floyd-Warshall algorithm 
-for finding shortest paths in a bidirectional weighted graph.
+for finding shortest paths in a bidirectional weighted graph, including graphs 
+with negative weights.
 
-The module is designed for graphs where edges are bidirectional 
-and represented as a list of edges.
+The module also detects negative weight cycles and raises an exception when such a cycle is found.
 
 Functions:
     floyd_warshall_bidirectional(n, edges)
@@ -23,7 +23,7 @@ def floyd_warshall_bidirectional(n, edges):
     edges : list of tuples
         A list of edges, where each edge is represented as a tuple (fromi, toi, weighti).
         - `fromi` and `toi` are the nodes connected by the edge.
-        - `weighti` is the weight of the edge.
+        - `weighti` is the weight of the edge (can be negative).
 
     Returns:
     --------
@@ -41,18 +41,17 @@ def floyd_warshall_bidirectional(n, edges):
     >>> n = 4
     >>> edges = [
     ...     (0, 1, 3),
-    ...     (0, 3, 5),
-    ...     (1, 3, 4),
-    ...     (2, 1, 1),
-    ...     (3, 2, 2)
+    ...     (1, 2, -2),
+    ...     (2, 3, 2),
+    ...     (3, 0, -1)
     ... ]
     >>> dist = floyd_warshall_bidirectional(n, edges)
     >>> for row in dist:
     ...     print(row)
-    [0, 3, 7, 5]
-    [3, 0, 3, 4]
-    [7, 3, 0, 2]
-    [5, 4, 2, 0]
+    [0, 3, 1, -1]
+    [3, 0, -2, 0]
+    [1, 4, 0, 2]
+    [-1, 2, -2, 0]
     """
     # Initialize the distance matrix with infinity
     dist = [[float('inf')] * n for _ in range(n)]
